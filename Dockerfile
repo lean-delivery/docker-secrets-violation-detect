@@ -6,6 +6,7 @@ LABEL maintainer="team@lean-delivery.com"
 # build cred-alert
 RUN apk --no-cache add unzip
 RUN apk add --no-cache --virtual .build-dependancies git \
+    && go get github.com/pivotal-cf/cred-alert \
     && go install github.com/pivotal-cf/cred-alert
 
 # install detect-secrets
