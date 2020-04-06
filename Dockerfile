@@ -16,3 +16,5 @@ RUN apk --no-cache add unzip git
 RUN	pip install detect-secrets
 
 COPY --from=gobuild /go/bin/cred-alert /usr/bin
+
+COPY credentials.regexp /etc/cred-alert/regexp
